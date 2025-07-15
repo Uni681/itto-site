@@ -1,0 +1,45 @@
+body {
+  background-color: #f9f2e4;
+  color: #111;
+  font-family: 'Yu Mincho', serif;
+  margin: 0;
+  padding: 0;
+}
+
+.main-header {
+  text-align: center;
+  padding: 60px 20px 40px;
+  border-bottom: 3px solid #ccc;
+}
+
+.logo {
+  max-width: 250px;
+  height: auto;
+  display: block;
+  margin: 0 auto 20px;
+}
+.about {
+  background-image: url("img/japanese-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 60px 20px;
+  color: #111;
+}
+
+
+.about h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.about p {
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.brush {
+  display: block;
+  margin: 10px auto 30px;
+  max-width: 120px;
+}
+
