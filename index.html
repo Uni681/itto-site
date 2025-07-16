@@ -2,24 +2,96 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>一陶｜タイル施工の職人集団</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>株式会社一陶</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="main-header">
+  <div class="header-left">
     <img src="img/logo.png" alt="一陶ロゴ" class="logo">
-    <h1>ようこそ、一陶へ</h1>
-    <p>私たちは、江戸の粋と現代の技を融合させたタイル施工の職人集団です。</p>
-  </header>
+    <div class="company-info">
+      <div class="company-name">株式会社一陶</div>
+      <div class="tel">☎045-000-0000</div>
+    </div>
+  </div>
+  <a href="#" class="contact-btn">お問い合わせ</a>
+</header>
+
+<nav class="nav-menu">
+  <a href="#">ホーム</a>
+  <a href="#">業務内容</a>
+  <a href="#">施工事例</a>
+  <a href="#">会社概要</a>
+  <a href="#">求人情報</a>
+</nav>
+
 </body>
-<section class="about">
-  <h2>一陶について</h2>
-  <img src="img/brush-line.png" alt="筆線" class="brush">
-  <p>
-    一陶は、江戸の粋と現代の技を融合させた職人集団です。  
-    神奈川県を拠点に、住宅・店舗のタイル施工を手がけています。
-  </p>
+<section class="slider">
+  <div class="slide active">
+    <img src="img/wall.jpg" alt="スライド1">
+    <div class="caption">店舗・マンション・ビルなどの石工事タイル工事</div>
+  </div>
+  <div class="slide">
+    <img src="img/hands.jpg" alt="スライド2">
+    <div class="caption">伝統の技と現代の融合</div>
+  </div>
+  <div class="slide">
+    <img src="img/japanese-bg.jpg" alt="スライド3">
+    <div class="caption">確かな職人技で安心の施工</div>
+  </div>
+
+  <!-- 矢印ボタン -->
+  <div class="arrow prev">❮</div>
+  <div class="arrow next">❯</div>
+
+  <!-- スライドナビ -->
+  <div class="slider-nav">
+    <span class="dot active"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
 </section>
 
+<script>
+  let current = 0;
+  const slides = document.querySelectorAll(".slide");
+  const dots = document.querySelectorAll(".dot");
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle("active", i === index);
+      dots[i].classList.toggle("active", i === index);
+    });
+  }
+
+  function nextSlide() {
+    current = (current + 1) % slides.length;
+    showSlide(current);
+  }
+
+  dots.forEach((dot, i) => {
+    dot.addEventListener("click", () => {
+      current = i;
+      showSlide(current);
+    });
+  });
+
+  // 🆕 矢印ボタンのイベント
+  document.querySelector(".prev").addEventListener("click", () => {
+    current = (current - 1 + slides.length) % slides.length;
+    showSlide(current);
+  });
+
+  document.querySelector(".next").addEventListener("click", () => {
+    current = (current + 1) % slides.length;
+    showSlide(current);
+  });
+
+  showSlide(current); // 初期表示
+  setInterval(nextSlide, 5000); // 自動スライド
+</script>
+
+</body>
 </html>
 
