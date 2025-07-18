@@ -367,34 +367,27 @@ body {
     padding-bottom: 0;
   }
 }
-ここから↓一番下のページ
 .access {
-  background-color: red !important;
+  background-image: url("img/japanese-bg.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  padding: 60px 20px;
-  min-height: 100vh; /* 背景が見えるために必要！ */
+  padding: 40px 20px;
+  color: #111;
 }
-
 .access-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  background-color: #ede8e2; /* ← 四角い枠の色はここ！ */
-  padding: 40px;
-  border-radius: 12px;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   gap: 40px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* オシャレ影 */
+  max-width: 1100px;
+  margin: 0 auto;
+  background-color: rgba(237, 232, 226, 0.95); /* 半透明背景 */
+  padding: 40px;
+  border-radius: 12px;
 }
 
-.access-info {
-  flex: 1;
-  font-family: "Yu Mincho", serif;
-}
-
+.access-info,
 .access-map {
   flex: 1;
 }
@@ -405,13 +398,6 @@ body {
   border: none;
   border-radius: 8px;
 }
-
-.logo {
-  width: 80px;
-  height: auto;
-  margin-bottom: 20px;
-}
-
 @media screen and (max-width: 768px) {
   .access-inner {
     flex-direction: column;
@@ -420,9 +406,5 @@ body {
 
   .access-map iframe {
     height: 200px;
-  }
-
-  .logo {
-    width: 60px;
   }
 }
