@@ -408,3 +408,34 @@ body {
     height: 200px;
   }
 }
+.site-footer {
+  background-color: #ede8e2; /* bodyと同じ色 */
+  padding: 10px 0;
+  text-align: center;
+}
+
+.footer-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.footer-nav li a {
+  color: #111;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footer-nav li a:hover {
+  text-decoration: underline;
+}
+.copyright {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #000000;
+  text-align: center;
+}
