@@ -314,18 +314,44 @@ body {
 
 /* ===== モバイル対応（768px以下） ===== */
 @media screen and (max-width: 768px) {
-  /* ヘッダーを縦並びに */
-  .site-header {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
+  @media screen and (max-width: 768px) {
   .header-top {
-    flex-direction: column;
-    gap: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    padding: 10px 15px;
   }
 
+  .header-left {
+    display: flex;
+    align-items: center;
+  }
+
+  .logo {
+    width: 60px;
+    height: auto;
+    margin-right: 0; /* ロゴと社名の間に余白 */
+  }
+
+  .company-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1.2;
+     margin-top: 6px; /* ← 社名ロゴ下げる */
+     margin-left: -10px;  /* ←好きな値で微調整OK！ */
+  }
+
+  .company-name {
+    font-size: 20px;
+    margin-bottom: 3px;
+  }
+
+  .tel {
+    font-size: 15px;
+  }
+}
   /* ハンバーガー表示ON */
   .hamburger {
     display: block;
