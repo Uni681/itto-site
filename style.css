@@ -351,6 +351,7 @@ body {
   .tel {
     font-size: 15px;
   }
+  
 }
   /* ハンバーガー表示ON */
   .hamburger {
@@ -464,4 +465,105 @@ body {
   font-size: 14px;
   color: #000000;
   text-align: center;
+}
+/*↓キャッチコピーのとこ*/
+@media screen and (max-width: 768px) {
+  .section-message {
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  .section-message h2 {
+    font-size: 20px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    word-break: keep-all;
+  }
+
+  .section-message h3 {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    word-break: keep-all;
+  }
+
+.section-message p {
+  font-size: 15px;
+  line-height: 1.8;
+  padding-left: 32px;   /* ←左から少し余白入れる */
+  padding-right: 16px;
+  max-width: 90%;
+  white-space: normal;
+  margin: 0 auto;
+  text-align: left;
+  word-break: keep-all;
+}
+.mobile-hide {
+    display: none;
+  }
+}
+@media screen and (max-width: 768px) {
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    padding: 20px;
+
+    max-width: 500px;        /* ★ 幅を制限して */
+    margin: 0 auto;          /* ★ 中央寄せにする！ */
+  }
+
+  .card {
+    width: 100%;
+    text-align: center;
+  }
+
+  .card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  .access-info {
+  text-align: left;
+  padding: 20px;
+  line-height: 1.5; /* ←行間をやや詰める（デフォは1.6〜1.8） */
+  font-size: 15px;  /* ←ちょい小さめに */
+}
+
+.access-info h2 {
+  font-size: 18px;
+  margin: 10px 0;   /* 上下の余白も控えめに */
+}
+
+.access-info p {
+  margin: 6px 0;    /* 各pタグの上下余白も減らす */
+}
+
+}
+@media screen and (max-width: 768px) {
+  .footer-nav {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);  /* 2列表示 */
+    gap: 8px 16px;                          /* 行間と列間の余白 */
+    padding: 20px;
+    font-size: 14px;                        /* フォント小さめに */
+    text-align: center;
+    justify-items: center;                 /* 各項目を中央揃え */
+    list-style: none;
+    margin: 0 auto;
+    max-width: 320px;                       /* 幅制限で整った印象に */
+  }
+
+  .footer-nav li a {
+    text-decoration: none;
+    color: inherit;                        /* 必要あれば色調整 */
+  }
+
+  .copyright {
+    font-size: 12px;
+    text-align: center;
+    margin-top: 20px;
+    padding-bottom: 30px;
+    color: #333;
+  }
 }
