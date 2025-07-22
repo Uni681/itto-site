@@ -543,20 +543,25 @@ body {
 @media screen and (max-width: 768px) {
   .footer-nav {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);  /* 2列表示 */
-    gap: 8px 16px;                          /* 行間と列間の余白 */
+    grid-template-columns: repeat(2, 1fr);  /* 2列 */
+    gap: 8px 16px;
     padding: 20px;
-    font-size: 14px;                        /* フォント小さめに */
+    font-size: 14px;
     text-align: center;
-    justify-items: center;                 /* 各項目を中央揃え */
+    justify-items: center;
     list-style: none;
     margin: 0 auto;
-    max-width: 320px;                       /* 幅制限で整った印象に */
+    max-width: 320px;
   }
 
   .footer-nav li a {
     text-decoration: none;
-    color: inherit;                        /* 必要あれば色調整 */
+    color: inherit;
+  }
+
+  .footer-nav li:last-child {
+    grid-column: 1 / -1;
+    justify-self: center;
   }
 
   .copyright {
