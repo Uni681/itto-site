@@ -28,6 +28,20 @@
 .nav-menu li a:hover {
   color: #007bff;
 }
+@media screen and (max-width: 768px) {
+  .nav-menu {
+    font-size: 13px; /* ← 少し小さく */
+    gap: 12px;        /* ← 間隔も少し詰める */
+    justify-content: center;
+    text-align: center;
+  }
+
+  .nav-menu li a {
+    white-space: nowrap; /* ← 改行を防ぐ */
+    padding: 4px 6px;
+    font-weight: normal;
+  }
+}
 
 
 /* ===================================
@@ -108,7 +122,7 @@
   transform: translateX(-50%);
   background: rgba(255, 255, 255, 0.8);
   padding: 20px 30px;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
   color: #333;
   border-radius: 8px;

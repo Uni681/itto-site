@@ -153,53 +153,66 @@
   </footer>
 
   <!-- ========================== JavaScript ========================== -->
-  <script>
-    let current = 0;
-    const slides = document.querySelectorAll(".slide");
-    const dots = document.querySelectorAll(".dot");
+<script>
+  let current = 0;
+  const slides = document.querySelectorAll(".slide");
+  const dots = document.querySelectorAll(".dot");
+  const prevBtn = document.querySelector(".prev");
+  const nextBtn = document.querySelector(".next");
 
-    function showSlide(index) {
-      slides.forEach((slide, i) => {
-        slide.classList.toggle("active", i === index);
-        dots[i].classList.toggle("active", i === index);
-      });
-    }
+  let autoSlideInterval;
 
-    function nextSlide() {
-      current = (current + 1) % slides.length;
-      showSlide(current);
-    }
-
-    // ドットクリックでスライド切替
-    dots.forEach((dot, i) => {
-      dot.addEventListener("click", () => {
-        current = i;
-        showSlide(current);
-      });
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle("active", i === index);
+      dots[i].classList.toggle("active", i === index);
     });
+    current = index;
+  }
 
-    // 左右矢印ボタンでスライド切替
-    document.querySelector(".prev").addEventListener("click", () => {
-      current = (current - 1 + slides.length) % slides.length;
-      showSlide(current);
-    });
-    document.querySelector(".next").addEventListener("click", () => {
-      current = (current + 1) % slides.length;
-      showSlide(current);
-    });
+  function nextSlide() {
+    const next = (current + 1) % slides.length;
+    showSlide(next);
+  }
 
-    // ハンバーガーメニューの開閉処理
-    const hamburger = document.getElementById("hamburger");
-    const mobileMenu = document.getElementById("mobileMenu");
-    hamburger.addEventListener("click", () => {
-      mobileMenu.style.display =
-        mobileMenu.style.display === "flex" ? "none" : "flex";
-    });
+  function startAutoSlide() {
+    clearInterval(autoSlideInterval); // ←ここで一旦止める
+    autoSlideInterval = setInterval(nextSlide, 3000); // 5秒後に次へ
+  }
 
-    // 初期表示と自動再生
-    showSlide(current);
-    setInterval(nextSlide, 5000);
-  </script>
+  // ドットクリックでスライド切替＋タイマーリセット
+  dots.forEach((dot, i) => {
+    dot.addEventListener("click", () => {
+      showSlide(i);
+      startAutoSlide();
+    });
+  });
+
+  // 矢印ボタンでも同様にリセット
+  prevBtn.addEventListener("click", () => {
+    const prev = (current - 1 + slides.length) % slides.length;
+    showSlide(prev);
+    startAutoSlide();
+  });
+
+  nextBtn.addEventListener("click", () => {
+    const next = (current + 1) % slides.length;
+    showSlide(next);
+    startAutoSlide();
+  });
+
+  // ハンバーガーメニューの開閉
+  const hamburger = document.getElementById("hamburger");
+  const mobileMenu = document.getElementById("mobileMenu");
+  hamburger.addEventListener("click", () => {
+    mobileMenu.style.display =
+      mobileMenu.style.display === "flex" ? "none" : "flex";
+  });
+
+  // 初期表示とオートスタート
+  showSlide(current);
+  startAutoSlide();
+</script>
 
 </body>
 </html>
