@@ -79,6 +79,17 @@
   margin-bottom: 10px;
 }
 
+@media screen and (max-width: 768px) {
+  .hamburger {
+    display: block; /* モバイルでは表示 */
+  }
+
+  .nav-menu {
+    display: none; /* 通常のメニューは非表示 */
+  }
+}
+
+
 /* ===================================
    ◆ スライダー：全体設定
 =================================== */

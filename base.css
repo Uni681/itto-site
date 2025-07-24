@@ -71,3 +71,15 @@ body {
 .contact-btn:hover {
   background-color: #0056b3;
 }
+/* お問い合わせボタン（デフォルト非表示） */
+/* PCでは表示 */
+.contact-btn {
+  display: inline-block;
+}
+
+/* スマホのときだけ非表示 */
+@media (max-width: 768px) {
+  .contact-btn {
+    display: none;
+  }
+}
