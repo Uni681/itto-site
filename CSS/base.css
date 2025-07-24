@@ -1,0 +1,73 @@
+/* ===================================
+   ◆ ベース設定（背景・文字・フォント）
+=================================== */
+body {
+  background-color: #ede8e2;
+  color: #111;
+  font-family: 'Yu Mincho', serif;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* ===================================
+   ◆ ヘッダー上部（ロゴ・会社情報・電話・ボタン）
+=================================== */
+.header-top {
+  background-color: #ede8e2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* ロゴ画像（PCサイズ） */
+.logo {
+  height: 80px !important;
+  width: auto !important;
+  display: block;
+  margin-top: -5px; /* ← ロゴの位置調整 */
+}
+
+/* 会社名＋電話番号の親 */
+.company-info {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  line-height: 1.4;
+  justify-content: center;
+}
+
+/* 会社名 */
+.company-name {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* 電話番号 */
+.tel {
+  color: #333;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* お問い合わせボタン（共通） */
+.contact-btn {
+  background-color: #007bff;
+  color: white;
+  padding: 6px 12px;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 14px;
+  display: inline-block;
+}
+
+.contact-btn:hover {
+  background-color: #0056b3;
+}

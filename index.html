@@ -2,14 +2,16 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   <title>株式会社一陶</title>
-  <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/home.css">
 </head>
 <body>
 
-  <!-- ヘッダー上部（会社名・電話） -->
+  <!-- ========================== ヘッダー ========================== -->
   <header class="site-header">
+    <!-- ヘッダー上部（ロゴ・会社名・電話番号・お問い合わせ） -->
     <div class="header-top">
       <div class="header-left">
         <img src="img/logo.png" alt="一陶ロゴ" class="logo">
@@ -21,7 +23,7 @@
       <a href="#" class="contact-btn">お問い合わせ</a>
     </div>
 
-    <!-- ナビメニュー（白背景） -->
+    <!-- ナビメニュー（PC表示用） -->
     <nav class="main-nav">
       <ul class="nav-menu">
         <li><a href="#">ホーム</a></li>
@@ -30,64 +32,68 @@
         <li><a href="#">会社概要</a></li>
         <li><a href="#">求人情報</a></li>
       </ul>
-      <!-- ハンバーガーメニュー -->
-<div class="hamburger" id="hamburger">
-  ☰
-</div>
-<nav class="nav-menu mobile" id="mobileMenu">
-  <a href="#">ホーム</a>
-  <a href="#">業務内容</a>
-  <a href="#">施工事例</a>
-  <a href="#">会社概要</a>
-  <a href="#">求人情報</a>
     </nav>
+
+    <!-- ハンバーガーメニュー（モバイル用） -->
+    <div class="hamburger" id="hamburger">☰</div>
+    <div class="nav-menu mobile" id="mobileMenu">
+      <a href="#">ホーム</a>
+      <a href="#">業務内容</a>
+      <a href="#">施工事例</a>
+      <a href="#">会社概要</a>
+      <a href="#">求人情報</a>
+    </div>
   </header>
 
-<!-- スライダー -->
-<section class="slider">
-  <div class="slide active">
-    <img src="img/wall.jpg" alt="スライド1">
-    <div class="caption caption-slide1">
-      店舗・マンション・ビルなどの、<br class="mobile-break">石工事タイル工事
+  <!-- ========================== スライダー ========================== -->
+  <section class="slider">
+    <!-- スライド1 -->
+    <div class="slide active">
+      <img src="img/wall.jpg" alt="スライド1">
+      <div class="caption caption-slide1">
+        店舗・マンション・ビルなどの、<br class="mobile-break">石工事タイル工事
+      </div>
     </div>
-  </div> <!-- ←これを忘れずに入れる！ -->
 
-  <div class="slide">
-    <img src="img/hands.jpg" alt="スライド2">
-    <div class="caption">伝統の技と現代の融合</div>
-  </div>
+    <!-- スライド2 -->
+    <div class="slide">
+      <img src="img/hands.jpg" alt="スライド2">
+      <div class="caption">伝統の技と現代の融合</div>
+    </div>
 
-  <div class="slide">
-    <img src="img/japanese-bg.jpg" alt="スライド3">
-    <div class="caption">確かな職人技で安心の施工</div>
-  </div>
+    <!-- スライド3 -->
+    <div class="slide">
+      <img src="img/japanese-bg.jpg" alt="スライド3">
+      <div class="caption">確かな職人技で安心の施工</div>
+    </div>
 
-  <!-- 矢印ボタン -->
-  <div class="arrow prev">❮</div>
-  <div class="arrow next">❯</div>
+    <!-- スライド矢印ボタン -->
+    <div class="arrow prev">❮</div>
+    <div class="arrow next">❯</div>
 
-  <!-- スライドナビ -->
-  <div class="slider-nav">
-    <span class="dot active"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-  </div>
-</section>
+    <!-- スライド下のドットナビ -->
+    <div class="slider-nav">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </section>
 
-  <!-- キャッチコピー -->
+  <!-- ========================== キャッチコピー ========================== -->
   <section class="section-message">
     <h2>一枚のタイルに、想いを込めて。</h2>
     <h3>受け継がれた技と、信頼される仕上がりを。</h3>
-<p class="message-text">
-  一陶は、確かな技術と細部へのこだわり、豊富な実績、培われた経験で、住宅や、マンションのタイル施工を手がけています。<br>
-  <span class="mobile-hide">
-    和と現代が調和する、美しく丈夫な空間づくりをお届けします。
-  </span>
-</p>
+    <p class="message-text">
+      一陶は、確かな技術と細部へのこだわり、豊富な実績、培われた経験で、住宅や、マンションのタイル施工を手がけています。<br>
+      <span class="mobile-hide">
+        和と現代が調和する、美しく丈夫な空間づくりをお届けします。
+      </span>
+    </p>
   </section>
 
-  <!-- カードリンク集 -->
+  <!-- ========================== カードリンク集 ========================== -->
   <section class="cards">
+    <!-- 各カードは別ページへのリンクになる想定 -->
     <div class="card">
       <img src="img/japanese-bg.jpg" alt="業務内容">
       <h4>業務内容</h4>
@@ -110,82 +116,90 @@
     </div>
   </section>
 
-  <!-- スライドJS -->
-<script>
-  let current = 0;
-  const slides = document.querySelectorAll(".slide");
-  const dots = document.querySelectorAll(".dot");
+  <!-- ========================== アクセス情報 ========================== -->
+  <section class="access">
+    <div class="access-inner">
+      <!-- 会社情報 -->
+      <div class="access-info">
+        <img src="img/logo.png" alt="会社ロゴ" class="logo" />
+        <h2>株式会社一陶</h2>
+        <p>〒221-0834<br>神奈川県横浜市神奈川区台町8-14<br>ベイシティ滝川 412</p>
+        <p>TEL：045-577-9444 <br>FAX：045-577-9443</p>
+        <p>店舗・マンション・ビルなどのタイル工事・etc...お任せ下さい。</p>
+      </div>
 
-  function showSlide(index) {
-    slides.forEach((slide, i) => {
-      slide.classList.toggle("active", i === index);
-      dots[i].classList.toggle("active", i === index);
+      <!-- Google Map -->
+      <div class="access-map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3249.3757470499804!2d139.62208291124693!3d35.470246072542004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60185c112c4cb5b3%3A0x706524426e2fb7a8!2z44CSMjIxLTA4MzQg56We5aWI5bed55yM5qiq5rWc5biC56We5aWI5bed5Yy65Y-w55S677yY4oiS77yR77yUIOODmeOCpOOCt-ODhuOCo-a7neW3nQ!5e0!3m2!1sja!2sjp!4v1752821251835!5m2!1sja!2sjp" 
+          width="400" height="300" style="border:0;"
+          allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================== フッター ========================== -->
+  <footer class="site-footer">
+    <ul class="footer-nav">
+      <li><a href="#">HOME</a></li>
+      <li><a href="#">業務内容</a></li>
+      <li><a href="#">施工事例</a></li>
+      <li><a href="#">会社概要</a></li>
+      <li><a href="#">求人情報</a></li>
+      <li><a href="#">お問合せ</a></li>
+      <li><a href="#">プライバシーポリシー</a></li>
+    </ul>
+    <p class="copyright">Copyright © Itto Co., Ltd. All Rights Reserved.</p>
+  </footer>
+
+  <!-- ========================== JavaScript ========================== -->
+  <script>
+    let current = 0;
+    const slides = document.querySelectorAll(".slide");
+    const dots = document.querySelectorAll(".dot");
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle("active", i === index);
+        dots[i].classList.toggle("active", i === index);
+      });
+    }
+
+    function nextSlide() {
+      current = (current + 1) % slides.length;
+      showSlide(current);
+    }
+
+    // ドットクリックでスライド切替
+    dots.forEach((dot, i) => {
+      dot.addEventListener("click", () => {
+        current = i;
+        showSlide(current);
+      });
     });
-  }
 
-  function nextSlide() {
-    current = (current + 1) % slides.length;
-    showSlide(current);
-  }
-
-  // ドットクリックでスライド切り替え
-  dots.forEach((dot, i) => {
-    dot.addEventListener("click", () => {
-      current = i;
+    // 左右矢印ボタンでスライド切替
+    document.querySelector(".prev").addEventListener("click", () => {
+      current = (current - 1 + slides.length) % slides.length;
       showSlide(current);
     });
-  });
+    document.querySelector(".next").addEventListener("click", () => {
+      current = (current + 1) % slides.length;
+      showSlide(current);
+    });
 
-  // 矢印で前後スライド
-  document.querySelector(".prev").addEventListener("click", () => {
-    current = (current - 1 + slides.length) % slides.length;
+    // ハンバーガーメニューの開閉処理
+    const hamburger = document.getElementById("hamburger");
+    const mobileMenu = document.getElementById("mobileMenu");
+    hamburger.addEventListener("click", () => {
+      mobileMenu.style.display =
+        mobileMenu.style.display === "flex" ? "none" : "flex";
+    });
+
+    // 初期表示と自動再生
     showSlide(current);
-  });
+    setInterval(nextSlide, 5000);
+  </script>
 
-  document.querySelector(".next").addEventListener("click", () => {
-    current = (current + 1) % slides.length;
-    showSlide(current);
-  });
-
-  // ハンバーガーメニューの開閉
-  const hamburger = document.getElementById("hamburger");
-  const mobileMenu = document.getElementById("mobileMenu");
-
-  hamburger.addEventListener("click", () => {
-    mobileMenu.style.display = 
-      mobileMenu.style.display === "flex" ? "none" : "flex";
-  });
-
-  // 初期表示＆自動再生
-  showSlide(current);
-  setInterval(nextSlide, 5000);
-</script>
-<section class="access">
-  <div class="access-inner">
-    <div class="access-info">
-      <img src="img/logo.png" alt="会社ロゴ" class="logo" />
-      <h2>株式会社一陶</h2>
-      <p>〒221-0834<br>神奈川県横浜市神奈川区台町8-14<br>ベイシティ滝川 412</p>
-      <p>TEL：045-577-9444 <br>FAX：045-577-9443</p>
-      <p>店舗・マンション・ビルなどのタイル工事・etc...お任せ下さい。</p>
-    </div>
-
-    <div class="access-map">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3249.3757470499804!2d139.62208291124693!3d35.470246072542004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60185c112c4cb5b3%3A0x706524426e2fb7a8!2z44CSMjIxLTA4MzQg56We5aWI5bed55yM5qiq5rWc5biC56We5aWI5bed5Yy65Y-w55S677yY4oiS77yR77yUIOODmeOCpOOCt-ODhuOCo-a7neW3nQ!5e0!3m2!1sja!2sjp!4v1752821251835!5m2!1sja!2sjp" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
-  </div>
-</section>
-<footer class="site-footer">
-  <ul class="footer-nav">
-    <li><a href="#">HOME</a></li>
-    <li><a href="#">業務内容</a></li>
-    <li><a href="#">施工事例</a></li>
-    <li><a href="#">会社概要</a></li>
-    <li><a href="#">求人情報</a></li>
-    <li><a href="#">お問合せ</a></li>
-    <li><a href="#">プライバシーポリシー</a></li>
-  </ul>
-    <p class="copyright">Copyright © Itto Co., Ltd. All Rights Reserved.</p>
-</footer>
 </body>
 </html>

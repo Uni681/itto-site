@@ -1,0 +1,538 @@
+/* ===================================
+   ◆ ナビメニュー（PC表示用）
+=================================== */
+.main-nav {
+  background-color: #ffffff;
+  padding: 10px 30px;
+  border-bottom: 3px solid #ccc;
+}
+
+/* ナビメニューリスト（横並び） */
+.nav-menu {
+  display: flex;
+  gap: 20px;
+  font-size: 15px;
+  margin: 0;
+  list-style: none;
+  padding: 0;
+}
+
+/* ナビリンク（通常時） */
+.nav-menu li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+/* ナビリンク（ホバー時） */
+.nav-menu li a:hover {
+  color: #007bff;
+}
+
+
+/* ===================================
+   ◆ ハンバーガーメニュー（モバイル表示用）
+=================================== */
+.hamburger {
+  display: none; /* PCでは非表示 */
+  font-size: 28px;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+/* ハンバーガークリックで開くメニュー（初期状態） */
+.nav-menu.mobile {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 70px;
+  right: 10px;
+  background: linear-gradient(to bottom, #303131, #525353); /* 背景グラデーション */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+}
+
+/* 開いたモバイルメニューのリンク */
+.nav-menu.mobile a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* ===================================
+   ◆ スライダー：全体設定
+=================================== */
+.slider {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+/* 各スライド（非表示が初期状態） */
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+/* 表示中のスライドに適用されるクラス */
+.slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+/* スライド内の画像 */
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* スライド内のテキスト（キャプション） */
+.caption {
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.8);
+  padding: 20px 30px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  border-radius: 8px;
+  text-align: center;
+  white-space: nowrap;
+  width: fit-content;
+  max-width: 90%;
+}
+
+/* 1枚目専用キャプション（モバイル対応あり） */
+.caption-slide1 {
+  display: inline-block;
+  margin: 0 auto;
+  padding: 20px 30px;
+  max-width: 95%;
+  width: fit-content;
+  font-size: 14px;
+  white-space: normal;
+  word-break: keep-all;
+}
+
+/* 改行用クラス：モバイルだけ改行 */
+@media screen and (max-width: 768px) {
+  .caption-slide1 .mobile-break {
+    display: inline;
+  }
+}
+@media screen and (min-width: 769px) {
+  .mobile-break {
+    display: none;
+  }
+}
+
+/* ===================================
+   ◆ スライダー下のドット（ナビ）
+=================================== */
+.slider-nav {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 2;
+}
+
+/* ドットの見た目 */
+.dot {
+  width: 12px;
+  height: 12px;
+  background-color: #aaa;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* アクティブなドット */
+.dot.active {
+  background-color: #333;
+}
+
+/* ===================================
+   ◆ スライダー矢印ボタン
+=================================== */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 28px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  cursor: pointer;
+  z-index: 2;
+  user-select: none;
+}
+
+.arrow.prev {
+  left: 10px;
+}
+
+.arrow.next {
+  right: 10px;
+}
+
+/* ===================================
+   ◆ キャッチコピー セクション
+=================================== */
+.section-message {
+  background-color: #ffffff;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+/* モバイル時のキャッチコピー調整 */
+@media screen and (max-width: 768px) {
+  .section-message {
+    padding: 40px 20px;
+  }
+
+  .section-message h2 {
+    font-size: 20px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    word-break: keep-all;
+  }
+
+  .section-message h3 {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    word-break: keep-all;
+  }
+
+  .section-message p {
+    font-size: 15px;
+    line-height: 1.8;
+    padding: 0 16px;
+    max-width: 100%;
+    white-space: normal;
+    margin: 0 auto;
+    text-align: left;
+    word-break: break-word;
+  }
+
+  .mobile-hide {
+    display: none;
+  }
+}
+
+/* ===================================
+   ◆ カード表示セクション
+=================================== */
+.cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  background-color: #fff;
+}
+
+/* カードの個別スタイル */
+.card {
+  width: 200px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* カード内画像 */
+.card img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+}
+
+/* カードタイトル */
+.card h4 {
+  margin: 10px 0 5px;
+  font-size: 18px;
+}
+
+/* カード内リンク */
+.card a {
+  display: block;
+  padding: 10px;
+  color: #333;
+  text-decoration: none;
+  border-top: 1px solid #eee;
+}
+
+/* カード内リンクホバー時 */
+.card a:hover {
+  background-color: #f5f5f5;
+}
+
+/* モバイル時のカード表示調整 */
+@media screen and (max-width: 768px) {
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    padding: 20px;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .card {
+    width: 100%;
+    text-align: center;
+  }
+
+  .card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+}
+
+/* ===================================
+   ◆ アクセスセクション（背景＋地図）
+=================================== */
+.access {
+  background-image: url("../img/japanese-bg.jpg");  /* 和風背景画像 */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 40px 20px;
+  color: #111;
+}
+
+/* アクセス内部レイアウト（住所と地図） */
+.access-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+  background-color: rgba(237, 232, 226, 0.95); /* 半透明ベージュ背景 */
+  padding: 40px;
+  border-radius: 12px;
+}
+
+.access-info,
+.access-map {
+  flex: 1;
+}
+
+/* Googleマップ埋め込み */
+.access-map iframe {
+  width: 100%;
+  height: 300px;
+  border: none;
+  border-radius: 8px;
+}
+
+/* モバイル時：縦並びに切り替え */
+@media screen and (max-width: 768px) {
+  .access-inner {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .access-map iframe {
+    height: 200px;
+  }
+
+  .access-info {
+    text-align: left;
+    padding: 20px;
+    line-height: 1.5;
+    font-size: 15px;
+  }
+
+  .access-info h2 {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+
+  .access-info p {
+    margin: 6px 0;
+  }
+}
+
+/* ===================================
+   ◆ フッター（共通・ナビゲーション）
+=================================== */
+.site-footer {
+  background-color: #ede8e2; /* 全体の背景と合わせる */
+  padding: 10px 0;
+  text-align: center;
+}
+
+/* フッターナビ：横並びのリンク */
+.footer-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.footer-nav li a {
+  color: #111;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footer-nav li a:hover {
+  text-decoration: underline;
+}
+
+/* 著作権表示 */
+.copyright {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #000000;
+  text-align: center;
+}
+
+/* ===== モバイル用（768px以下）フッター調整 ===== */
+@media screen and (max-width: 768px) {
+  .footer-nav {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);  /* 2列に分割 */
+    gap: 8px 16px;
+    padding: 20px;
+    font-size: 14px;
+    text-align: center;
+    justify-items: center;
+    list-style: none;
+    margin: 0 auto;
+    max-width: 320px;
+  }
+
+  .footer-nav li a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .footer-nav li:last-child {
+    grid-column: 1 / -1;
+    justify-self: center; /* 中央寄せ */
+  }
+
+  .copyright {
+    font-size: 12px;
+    text-align: center;
+    margin-top: 20px;
+    padding-bottom: 30px;
+    color: #333;
+  }
+}
+
+/* ===================================
+   ◆ キャッチコピーセクション
+=================================== */
+.section-message {
+  background-color: #ffffff;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+/* ===== モバイル対応（768px以下） キャッチコピー ===== */
+@media screen and (max-width: 768px) {
+  .section-message {
+    padding: 40px 20px;
+  }
+
+  .section-message h2 {
+    font-size: 20px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    word-break: keep-all;
+  }
+
+  .section-message h3 {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    word-break: keep-all;
+  }
+
+  .section-message p {
+    font-size: 15px;
+    line-height: 1.8;
+    padding: 0 16px;
+    max-width: 100%;
+    white-space: normal;
+    margin: 0 auto;
+    text-align: left;
+    word-break: break-word;
+  }
+
+  /* スライダー1枚目の文字部分（スマホ専用） */
+  .caption-slide1 {
+    display: inline-block;
+    margin: 0 auto;
+    padding: 20px 30px;
+    max-width: 95%;
+    width: fit-content;
+    font-size: 14px;
+    white-space: normal;
+    word-break: keep-all;
+  }
+}
+
+/* スライダー共通キャプション改行禁止（PCでも有効） */
+@media screen and (max-width: 768px) {
+  .caption {
+    white-space: nowrap;        /* 改行禁止 */
+    width: fit-content;
+    padding: 10px 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 90%;
+  }
+}
+
+/* ===================================
+   ◆ 改行制御（.mobile-break クラス）
+=================================== */
+
+/* モバイル時：改行あり */
+@media screen and (max-width: 768px) {
+  .mobile-break {
+    display: inline;
+  }
+}
+
+/* PC時：改行なし */
+@media screen and (min-width: 769px) {
+  .mobile-break {
+    display: none;
+  }
+}
