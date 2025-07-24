@@ -320,7 +320,7 @@
    ◆ アクセスセクション（背景＋地図）
 =================================== */
 .access {
-  background-image: url("../img/japanese-bg.jpg");  /* 和風背景画像 */
+  background-image: url("/img/japanese-bg.jpg");  /* 和風背景画像 */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
