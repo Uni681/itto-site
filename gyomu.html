@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <title>株式会社一陶</title>
+<link rel="stylesheet" href="base.css">
+<link rel="stylesheet" href="home.css">
+<link rel="stylesheet" href="gyomu.css">
+</head>
+<body>
+
+  <!-- ========================== ヘッダー ========================== -->
+  <header class="site-header">
+    <!-- ヘッダー上部（ロゴ・会社名・電話番号・お問い合わせ） -->
+    <div class="header-top">
+      <div class="header-left">
+        <img src="img/logo.png" alt="一陶ロゴ" class="logo">
+        <div class="company-info">
+          <div class="company-name">株式会社一陶</div>
+          <div class="tel">☎045-000-0000</div>
+        </div>
+      </div>
+      <a href="#" class="contact-btn">お問い合わせ</a>
+    </div>
+
+    <!-- ナビメニュー（PC表示用） -->
+    <nav class="main-nav">
+      <ul class="nav-menu">
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="gyomu.html">業務内容</a></li>
+        <li><a href="#">施工事例</a></li>
+        <li><a href="#">会社概要</a></li>
+        <li><a href="#">求人情報</a></li>
+      </ul>
+    </nav>
+
+    <!-- ハンバーガーメニュー（モバイル用） -->
+    <div class="hamburger" id="hamburger">☰</div>
+    <div class="nav-menu mobile" id="mobileMenu">
+      <a href="index.html">HOME</a>
+      <a href="gyomu.html">業務内容</a>
+      <a href="#">施工事例</a>
+      <a href="#">会社概要</a>
+      <a href="#">求人情報</a>
+    </div>
+  </header>
+
+  <!-- ========================== JavaScript ========================== -->
+<script>
+  const hamburger = document.getElementById("hamburger");
+  const mobileMenu = document.getElementById("mobileMenu");
+
+  if (hamburger && mobileMenu) {
+    hamburger.addEventListener("click", () => {
+      mobileMenu.style.display =
+        mobileMenu.style.display === "flex" ? "none" : "flex";
+    });
+
+    // モバイルメニューのリンク押したら自動で閉じるやつも追加
+    document.querySelectorAll('.nav-menu.mobile a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.style.display = 'none';
+      });
+    });
+  }
+</script>
+
+  <!-- ========================== ヒーロー画像セクション ========================== -->
+  <section class="hero-section">
+  <div class="hero-text">
+    <h1>業務内容</h1>
+    <p>Business</p>
+  </div>
+  <div class="hero-image"></div>
+</section>
+
+<div class="breadcrumb">
+  <a href="index.html">Home</a> &gt; 業務内容
+</div>
+
+<!-- ========================== 業務内容セクション ========================== -->
+
+<!-- ① タイル工事全般お任せ下さい（画像右・テキスト左） -->
+<section class="business-section">
+  <div class="business-inner">
+    <div class="business-text">
+      <h3><span>タイル工事全般お任せ下さい</span></h3>
+      <p>
+        当社は住宅から商業施設・公共施設まで、あらゆるタイル工事に対応しております。<br>
+        外壁・内装・床・階段など、施工箇所や用途に応じた最適なタイルを選定し、<br>
+        長年の経験と確かな技術で、美しく丁寧に仕上げます。<br>
+        施主様・元請け様のご要望をしっかりとヒアリングし、細部までこだわった高品質な施工をご提供いたします。      </p>
+    </div>
+    <div class="business-image">
+      <img src="img/hands.jpg" alt="施工写真1">
+    </div>
+  </div>
+</section>
+
+<!-- ② デザイン性と機能性を兼ね備えたタイル施工（画像左・テキスト右） -->
+<section class="business-section">
+  <div class="business-inner reverse">
+    <div class="business-image left-image"> <!-- ← クラス追加 -->
+      <img src="img/hands.jpg" alt="施工写真2">
+    </div>
+    <div class="business-text">
+      <h3><span>デザイン性と機能性を兼ね備えたタイル施工</span></h3>
+      <p>
+        マンションやビル、商業施設などの内装・外装において、タイルは美観と耐久性を両立する重要な素材です。<br>
+        一見シンプルに見えるタイルも、施工箇所によって適したサイズ・質感・機能性が大きく異なります。<br>
+        当社では豊富な施工経験を活かし、用途やご要望に合わせて最適なタイルを提案・施工いたします。<br>
+        特にエントランスや壁面、床面など、デザイン性と実用性が求められる場面での施工を得意としております。
+      </p>    
+      </div>
+  </div>
+</section>
+
+<!-- ③ 施工（画像右・テキスト左） -->
+<section class="business-section">
+  <div class="business-inner">
+    <div class="business-text">
+      <h3><span>安心と信頼のタイル施工</span></h3>
+      <p>
+        長年の現場経験により培った確かな施工技術で、細部まで丁寧に仕上げます。<br>
+        現場の状況やご希望に応じて柔軟に対応しながら、納期を厳守し、品質を最優先に施工いたします。<br>
+        「任せて良かった」と感じていただけるよう、仕上がりはもちろん、現場での対応力やマナーも大切にしています。
+      </p>    </div>
+    <div class="business-image">
+      <img src="img/hands.jpg" alt="施工写真3">
+    </div>
+  </div>
+</section>
+
+  <!-- ========================== アクセス情報 ========================== -->
+  <section class="access">
+    <div class="access-inner">
+      <!-- 会社情報 -->
+      <div class="access-info">
+        <img src="img/logo.png" alt="会社ロゴ" class="logo" />
+        <h2>株式会社一陶</h2>
+        <p>〒221-0834<br>神奈川県横浜市神奈川区台町8-14<br>ベイシティ滝川 412</p>
+        <p>TEL：045-577-9444 <br>FAX：045-577-9443</p>
+        <p>店舗・マンション・ビルなどのタイル工事・etc...お任せ下さい。</p>
+      </div>
+
+      <!-- Google Map -->
+      <div class="access-map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3249.3757470499804!2d139.62208291124693!3d35.470246072542004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60185c112c4cb5b3%3A0x706524426e2fb7a8!2z44CSMjIxLTA4MzQg56We5aWI5bed55yM5qiq5rWc5biC56We5aWI5bed5Yy65Y-w55S677yY4oiS77yR77yUIOODmeOCpOOCt-ODhuOCo-a7neW3nQ!5e0!3m2!1sja!2sjp!4v1752821251835!5m2!1sja!2sjp" 
+          width="400" height="300" style="border:0;"
+          allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================== フッター ========================== -->
+  <footer class="site-footer">
+    <ul class="footer-nav">
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="gyomu.html">業務内容</a></li>
+      <li><a href="#">施工事例</a></li>
+      <li><a href="#">会社概要</a></li>
+      <li><a href="#">求人情報</a></li>
+      <li><a href="#">お問合せ</a></li>
+      <li><a href="#">プライバシーポリシー</a></li>
+    </ul>
+    <p class="copyright">Copyright © Itto Co., Ltd. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
