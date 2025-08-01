@@ -1,0 +1,152 @@
+/* ===================================
+   ◆ ヒーロー画像セクション
+=================================== */
+.hero-section {
+  position: relative;
+  height: 180px;
+  background: #000000;
+  color: white;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero-text {
+  position: absolute;
+  left: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  color: white;
+  text-align: left;
+}
+
+.hero-text h1 {
+  font-size: 32px;
+  margin: 0;
+}
+
+.hero-text p {
+  font-size: 18px;
+  margin: 5px 0 0 0;
+}
+
+.hero-image {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 70%;
+  height: 100%;
+  background-image: url("img/japanese-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  clip-path: polygon(100% 0, 100% 100%, 0 100%);
+  z-index: 1;
+}
+
+/* パンくずリスト */
+.breadcrumb {
+font-size: 14px;
+margin: 20px auto;
+max-width: 1000px;
+padding: 0 20px;
+color: #555;
+}
+
+/* ========================== 求人情報セクション ========================== */
+.recruit-section {
+padding: 80px 20px;
+}
+
+.recruit-inner {
+max-width: 1000px;
+margin: 0 auto;
+}
+
+.section-title {
+font-size: 32px;
+text-align: center;
+margin-bottom: 40px;
+font-weight: bold;
+color: #333;
+border-bottom: 3px solid #000000;
+display: inline-block;
+padding-bottom: 10px;
+}
+
+.recruit-message {
+text-align: center;
+font-size: 22px;
+margin-bottom: 50px;
+line-height: 1.7;
+color: #444;
+}
+
+.recruit-box {
+background-color: #fff;
+padding: 30px;
+border-radius: 10px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.recruit-box h3 {
+font-size: 24px;
+margin-bottom: 20px;
+color: #000000;
+border-left: 6px solid #000000;
+padding-left: 10px;
+}
+
+.recruit-table {
+width: 100%;
+border-collapse: collapse;
+font-size: 16px;
+line-height: 1.6;
+}
+
+.recruit-table th,
+.recruit-table td {
+padding: 12px 15px;
+border-bottom: 1px solid #ccc;
+vertical-align: top;
+text-align: left;
+}
+
+.recruit-table th {
+width: 30%;
+background-color: #f0f0f0;
+font-weight: bold;
+color: #333;
+}
+
+.recruit-contact-link {
+color: #000000;
+text-decoration: underline;
+}
+
+.recruit-contact-link:hover {
+text-decoration: none;
+}
+
+/* ========================== モバイル対応 ========================== */
+@media screen and (max-width: 768px) {
+.section-title {
+font-size: 26px;
+}
+
+.recruit-message {
+font-size: 16px;
+}
+
+.recruit-box h3 {
+font-size: 20px;
+}
+
+.recruit-table {
+font-size: 15px;
+}
+
+.recruit-table th,
+.recruit-table td {
+padding: 10px;
+}
+}

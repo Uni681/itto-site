@@ -1,0 +1,140 @@
+/* ===================================
+   ◆ ヒーロー画像セクション
+=================================== */
+.hero-section {
+  position: relative;
+  height: 180px;
+  background: #000000;
+  color: white;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero-text {
+  position: absolute;
+  left: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  color: white;
+  text-align: left;
+}
+
+.hero-text h1 {
+  font-size: 32px;
+  margin: 0;
+}
+
+.hero-text p {
+  font-size: 18px;
+  margin: 5px 0 0 0;
+}
+
+.hero-image {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 70%;
+  height: 100%;
+  background-image: url("img/japanese-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  clip-path: polygon(100% 0, 100% 100%, 0 100%);
+  z-index: 1;
+}
+
+/* パンくずリスト */
+.breadcrumb {
+font-size: 14px;
+margin: 20px auto;
+max-width: 1000px;
+padding: 0 20px;
+color: #555;
+}
+
+
+/* ===================================
+   ◆ お問い合わせセクション
+=================================== */
+.contact-section {
+padding: 60px 20px;
+color: #060606; /* テキストは白で見やすく */
+}
+
+.contact-inner {
+max-width: 700px;
+margin: 0 auto;
+}
+
+.section-title {
+font-size: 32px;
+margin-bottom: 20px;
+text-align: center;
+border-bottom: 2px solid #ffffff;
+padding-bottom: 10px;
+}
+
+.contact-message {
+text-align: center;
+margin-bottom: 40px;
+font-size: 16px;
+line-height: 1.6;
+}
+
+.contact-form {
+display: flex;
+flex-direction: column;
+gap: 20px;
+}
+
+.form-group {
+display: flex;
+flex-direction: column;
+}
+
+.form-group label {
+font-weight: bold;
+margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group textarea {
+padding: 10px;
+border: 1px solid #cccccc;
+border-radius: 5px;
+font-size: 16px;
+background-color: #ffffff;
+color: #000000;
+}
+
+.form-submit {
+text-align: center;
+margin-top: 20px;
+}
+
+.form-submit button {
+background-color: #ffffff;
+color: #000000;
+border: none;
+padding: 12px 30px;
+font-size: 16px;
+border-radius: 30px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+.form-submit button:hover {
+background-color: #dddddd;
+}
+
+/* スマホ対応 */
+@media screen and (max-width: 768px) {
+  .contact-wrapper {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .contact-form button {
+    width: 100%;
+  }
+}

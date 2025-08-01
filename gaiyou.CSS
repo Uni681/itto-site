@@ -1,0 +1,148 @@
+/* ===================================
+   ◆ ヒーロー画像セクション
+=================================== */
+.hero-section {
+  position: relative;
+  height: 180px;
+  background: #000000;
+  color: white;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero-text {
+  position: absolute;
+  left: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  color: white;
+  text-align: left;
+}
+
+.hero-text h1 {
+  font-size: 32px;
+  margin: 0;
+}
+
+.hero-text p {
+  font-size: 18px;
+  margin: 5px 0 0 0;
+}
+
+.hero-image {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 70%;
+  height: 100%;
+  background-image: url("img/japanese-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  clip-path: polygon(100% 0, 100% 100%, 0 100%);
+  z-index: 1;
+}
+
+/* パンくずリスト */
+.breadcrumb {
+font-size: 14px;
+margin: 20px auto;
+max-width: 1000px;
+padding: 0 20px;
+color: #555;
+}
+
+/* ===================================
+   ◆ 会社概要セクション全体
+=================================== */
+
+.company-section {
+padding: 60px 20px;
+}
+
+.company-inner {
+max-width: 1000px;
+margin: 0 auto;
+}
+
+/* ===== セクションタイトル ===== */
+.section-title {
+font-size: 28px;
+font-weight: bold;
+border-left: 5px solid #000000;
+padding-left: 15px;
+margin-bottom: 30px;
+color: #333;
+}
+
+/* ===== ごあいさつエリア ===== */
+.greeting-box {
+background-color: #ffffff;
+padding: 30px;
+border-radius: 10px;
+margin-bottom: 60px;
+box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.greeting-box p {
+line-height: 1.8;
+font-size: 16px;
+color: #444;
+}
+
+.greeting-box .signature {
+text-align: right;
+font-weight: bold;
+margin-top: 20px;
+font-size: 16px;
+}
+
+/* ===== 会社概要表エリア ===== */
+.info-box {
+background-color: #ffffff;
+padding: 30px;
+border-radius: 10px;
+box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.company-table {
+width: 100%;
+border-collapse: collapse;
+}
+
+.company-table th,
+.company-table td {
+padding: 15px 10px;
+border-bottom: 1px solid #ddd;
+text-align: left;
+font-size: 16px;
+}
+
+.company-table th {
+width: 30%;
+background-color: #f0f0f0;
+font-weight: bold;
+color: #333;
+}
+
+/* ===== レスポンシブ対応（768px以下） ===== */
+@media screen and (max-width: 768px) {
+.section-title {
+font-size: 24px;
+}
+
+.greeting-box,
+.info-box {
+padding: 20px;
+}
+
+.company-table th,
+.company-table td {
+font-size: 15px;
+padding: 10px 5px;
+}
+
+.greeting-box .signature {
+font-size: 15px;
+}
+}

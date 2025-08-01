@@ -48,7 +48,6 @@
    ◆ 業務内容セクション（共通）
 =================================== */
 .business-section {
-  background-color: #f5f3ee;
   padding: 40px 20px;
   margin: 0 auto 40px;
   max-width: 1000px;
@@ -57,10 +56,6 @@
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   margin-top: 60px;
 }
-body {
-  background-color: #f7f7f7; /* ←好きな色に変えるだけ */
-}
-
 
 /* 中身を横並びにする（テキスト + 画像） */
 .business-inner {
