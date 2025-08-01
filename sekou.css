@@ -1,0 +1,126 @@
+/* ===================================
+   ◆ ヒーロー画像セクション
+=================================== */
+.hero-section {
+  position: relative;
+  height: 180px;
+  background: #000000;
+  color: white;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero-text {
+  position: absolute;
+  left: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  color: white;
+  text-align: left;
+}
+
+.hero-text h1 {
+  font-size: 32px;
+  margin: 0;
+}
+
+.hero-text p {
+  font-size: 18px;
+  margin: 5px 0 0 0;
+}
+
+.hero-image {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 70%;
+  height: 100%;
+  background-image: url("img/japanese-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  clip-path: polygon(100% 0, 100% 100%, 0 100%);
+  z-index: 1;
+}
+
+/* パンくずリスト */
+.breadcrumb {
+font-size: 14px;
+margin: 20px auto;
+max-width: 1000px;
+padding: 0 20px;
+color: #555;
+}
+
+/* ========================== 施工事例ページ ========================== */
+
+.works-section {
+max-width: 1000px;
+margin: 60px auto;
+padding: 0 20px;
+}
+
+.section-title {
+font-size: 2rem;
+text-align: center;
+margin-bottom: 50px;
+border-bottom: 3px solid #ccc;
+display: inline-block;
+padding-bottom: 10px;
+font-weight: bold;
+}
+
+/* 各現場ブロック */
+.site-section {
+margin-bottom: 60px;
+}
+
+.site-section h2 {
+font-size: 1.5rem;
+margin-bottom: 10px;
+color: #222;
+border-left: 5px solid #006666;
+padding-left: 10px;
+}
+
+/* 区切り線 */
+.divider {
+height: 2px;
+background-color: #ddd;
+margin-bottom: 20px;
+}
+
+/* 画像グリッド */
+.gallery {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+gap: 15px;
+}
+
+.gallery img {
+width: 100%;
+height: auto;
+border-radius: 8px;
+object-fit: cover;
+box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+transform: scale(1.03);
+}
+
+/* モバイル対応 */
+@media screen and (max-width: 600px) {
+.hero-text h1 {
+font-size: 28px;
+}
+
+.hero-text p {
+font-size: 14px;
+}
+
+.site-section h2 {
+font-size: 20px;
+}
+}
