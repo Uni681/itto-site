@@ -18,10 +18,10 @@
         <img src="img/logo.png" alt="一陶ロゴ" class="logo">
         <div class="company-info">
           <div class="company-name">株式会社一陶</div>
-          <div class="tel">☎045-000-0000</div>
+          <div class="tel">☎045-577-9444</div>
         </div>
       </div>
-      <a href="contact.HTML" class="contact-btn">お問い合わせ</a>
+      <a href="contact.HTML" class="contact-btn">お問合わせ</a>
     </div>
 
     <!-- ナビメニュー（PC表示用） -->
@@ -66,26 +66,55 @@
   }
 </script>
 
-  <!-- ========================== ヒーロー画像セクション ========================== -->
-  <section class="hero-section">
+<!-- ========================== ヒーローセクション（テキストのみ） ========================== -->
+<section class="hero-section">
   <div class="hero-text">
-    <h1>会社概要</h1>
-    <p>Company</p>
+    <h1>お問合わせ</h1>
+    <p class="en-title">contact</p>
+    <div class="hero-line"></div>
+    <p class="hero-sub">お仕事のご相談、ご依頼はこちらからお気軽にご連絡ください。</p>
   </div>
-  <div class="hero-image"></div>
 </section>
 
-<div class="breadcrumb">
-  <a href="index.html">Home</a> &gt; 会社概要
-</div>
+<section class="contact">
 
-<!-- ========================== お問い合わせセクション ========================== -->
-<script src="https://sdk.form.run/js/v2/embed.js"></script>
-<div
-class="formrun-embed"
-data-formrun-form="@naodn--V3gDeTwtuJrOvqJXylgb"
-data-formrun-redirect="true"
-></div>
+  <form id="inquiryForm">
+    <div class="form-group">
+      <label>お名前 <span class="required">必須</span></label>
+      <div class="name-fields">
+        <input type="text" name="lastName" placeholder="姓" required>
+        <input type="text" name="firstName" placeholder="名" required>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>電話番号 <span class="required">必須</span></label>
+      <div class="tel-fields">
+        <input type="text" name="tel1" maxlength="4" required>
+        <span>-</span>
+        <input type="text" name="tel2" maxlength="4" required>
+        <span>-</span>
+        <input type="text" name="tel3" maxlength="4" required>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>メールアドレス <span class="required">必須</span></label>
+      <input type="email" name="email" required>
+    </div>
+
+    <div class="form-group">
+      <label>お問い合わせ内容 <span class="required">必須</span></label>
+      <textarea name="message" rows="5" required></textarea>
+    </div>
+
+    <button type="submit">送信する</button>
+  </form>
+
+  <div id="thankYouMessage" style="display:none; margin-top:20px;">
+    <p>送信ありがとうございました。</p>
+  </div>
+</section>
 
 <!-- ========================== アクセス情報 ========================== -->
   <section class="access">
@@ -122,5 +151,14 @@ data-formrun-redirect="true"
     </ul>
     <p class="copyright">Copyright © Itto Co., Ltd. All Rights Reserved.</p>
   </footer>
+
+  <script>
+  document.getElementById('inquiryForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // 実際の送信はナシ
+    this.style.display = 'none'; // フォームを非表示に
+    document.getElementById('thankYouMessage').style.display = 'block'; // メッセージ表示
+  });
+</script>
+
 </body>
 </html>

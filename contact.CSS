@@ -1,61 +1,49 @@
-/* ===================================
-   ◆ ヒーロー画像セクション
-=================================== */
+/* ================================
+   ◆ ヒーローセクション（テキストのみ）
+================================ */
 .hero-section {
-  position: relative;
-  height: 180px;
-  background: #000000;
-  color: white;
+  background-color: #f7f5f2; /* 明るく柔らかいベージュ系 */
+  padding: 60px 20px;
   text-align: center;
-  overflow: hidden;
 }
 
 .hero-text {
-  position: absolute;
-  left: 50px;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 2;
-  color: white;
-  text-align: left;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #333;
 }
 
 .hero-text h1 {
-  font-size: 32px;
-  margin: 0;
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
-.hero-text p {
+.hero-text .en-title {
   font-size: 18px;
-  margin: 5px 0 0 0;
+  color: #999;
+  margin-bottom: 20px;
 }
 
-.hero-image {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  width: 70%;
-  height: 100%;
-  background-image: url("img/japanese-bg.jpg");
-  background-size: cover;
-  background-position: center;
-  clip-path: polygon(100% 0, 100% 100%, 0 100%);
-  z-index: 1;
+.hero-line {
+  width: 60px;
+  height: 2px;
+  background-color: #333;
+  margin: 0 auto 20px auto;
 }
 
-/* パンくずリスト */
-.breadcrumb {
-font-size: 14px;
-margin: 20px auto;
-max-width: 1000px;
-padding: 0 20px;
-color: #555;
+.hero-sub {
+  font-size: 16px;
+  color: #555;
 }
-
 
 /* ===================================
    ◆ お問い合わせセクショ
 =================================== */
+body {
+  background-color: #f7f5f2; /* サイト全体の背景色 */
+}
+
 .contact-section {
 padding: 60px 20px;
 color: #060606; /* テキストは白で見やすく */
@@ -141,6 +129,85 @@ transition: background-color 0.3s ease;
 background-color: #333333;
 }
 
+/* フォーム */
+.contact {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.contact h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.contact p {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.required {
+  color: white;
+  background-color: red;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-left: 8px;
+}
+
+.name-fields input,
+.tel-fields input {
+  width: calc(50% - 10px);
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.tel-fields input {
+  width: 60px;
+  text-align: center;
+}
+
+.tel-fields span {
+  margin: 0 5px;
+}
+
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button[type="submit"] {
+  display: block;
+  margin: 30px auto 0;
+  padding: 12px 30px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
 /* スマホ対応 */
 @media screen and (max-width: 768px) {
   .contact-wrapper {
@@ -151,4 +218,20 @@ background-color: #333333;
   .contact-form button {
     width: 100%;
   }
+    .card img {
+  width: 100%;
+  height: 200px; /* 統一したい高さ */
+  object-fit: cover; /* 切り抜いて自然に見せる */
+  border-radius: 8px;
+}
+.card p {
+  word-break: keep-all;   /* 単語の途中で改行しない */
+  line-break: strict;     /* 日本語でも自然に改行するように */
+}
+.card-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 }
