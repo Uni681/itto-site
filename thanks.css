@@ -1,0 +1,70 @@
+/* 送信完了セクションの余白と背景 */
+.thanks-section {
+  padding: 56px 16px 24px;
+  /* ベースが淡色なら透過させて馴染ませる。重すぎる場合は消してOK */
+  background: transparent;
+}
+
+/* カード本体 */
+.thanks-card {
+  max-width: 960px;
+  margin: 0 auto 48px;
+  padding: 32px 28px;
+  background: #ffffffcc;            /* 半透明の白 (ベースがベージュ系でも馴染む) */
+  backdrop-filter: blur(2px);
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.08);
+  text-align: left;
+}
+
+/* タイトル */
+.thanks-title {
+  margin: 0 0 12px;
+  font-size: clamp(22px, 3.2vw, 28px);
+  line-height: 1.35;
+  letter-spacing: .02em;
+}
+
+/* リード文 */
+.thanks-lead {
+  margin: 0 0 20px;
+  font-size: clamp(14px, 2.2vw, 16px);
+  color: #444;
+}
+
+/* 戻るボタン */
+.thanks-back {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: 1px solid #888;
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 1;
+  transition: transform .06s ease, background-color .2s ease, color .2s ease, border-color .2s ease;
+  background: #fff;
+  color: #333;
+}
+.thanks-back:hover {
+  transform: translateY(-1px);
+  background: #f3f3f3;
+  border-color: #666;
+}
+
+/* アクセスセクションとの間に余白を確保 */
+.thanks-section + .access {
+  margin-top: 8px; /* thanks-card 下の48px + 8pxで自然な間隔 */
+}
+
+/* スマホ微調整 */
+@media (max-width: 600px) {
+  .thanks-card { 
+    padding: 24px 18px; 
+    border-radius: 12px;
+  }
+  .thanks-back { 
+    width: 100%; 
+    text-align: center; 
+    padding: 12px 16px; 
+  }
+}

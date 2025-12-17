@@ -6,7 +6,7 @@
  <title>会社概要 | 株式会社一陶</title>
  <link rel="stylesheet" href="base.css" />
  <link rel="stylesheet" href="home.css" />
- <link rel="stylesheet" href="contact.CSS" />
+ <link rel="stylesheet" href="contact.css" />
 </head>
 <body>
 
@@ -21,7 +21,7 @@
           <div class="tel">☎045-577-9444</div>
         </div>
       </div>
-      <a href="contact.HTML" class="contact-btn">お問合わせ</a>
+      <a href="contact.html" class="contact-btn">お問合わせ</a>
     </div>
 
     <!-- ナビメニュー（PC表示用） -->
@@ -78,42 +78,50 @@
 
 <section class="contact">
 
-  <form id="inquiryForm">
-    <div class="form-group">
-      <label>お名前 <span class="required">必須</span></label>
-      <div class="name-fields">
-        <input type="text" name="lastName" placeholder="姓" required>
-        <input type="text" name="firstName" placeholder="名" required>
-      </div>
+<!-- ② フォーム：actionとmethodを追加、hiddenで連結値も用意 -->
+<form id="inquiryForm" action="/contact.php" method="post" autocomplete="on">
+  <div class="form-group">
+    <label>お名前 <span class="required">必須</span></label>
+    <div class="name-fields">
+      <input type="text" name="lastName" placeholder="姓" required>
+      <input type="text" name="firstName" placeholder="名" required>
     </div>
-
-    <div class="form-group">
-      <label>電話番号 <span class="required">必須</span></label>
-      <div class="tel-fields">
-        <input type="text" name="tel1" maxlength="4" required>
-        <span>-</span>
-        <input type="text" name="tel2" maxlength="4" required>
-        <span>-</span>
-        <input type="text" name="tel3" maxlength="4" required>
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label>メールアドレス <span class="required">必須</span></label>
-      <input type="email" name="email" required>
-    </div>
-
-    <div class="form-group">
-      <label>お問い合わせ内容 <span class="required">必須</span></label>
-      <textarea name="message" rows="5" required></textarea>
-    </div>
-
-    <button type="submit">送信する</button>
-  </form>
-
-  <div id="thankYouMessage" style="display:none; margin-top:20px;">
-    <p>送信ありがとうございました。</p>
   </div>
+
+  <div class="form-group">
+    <label>電話番号 <span class="required">必須</span></label>
+    <div class="tel-fields">
+      <input type="text" name="tel1" maxlength="4" required>
+      <span>-</span>
+      <input type="text" name="tel2" maxlength="4" required>
+      <span>-</span>
+      <input type="text" name="tel3" maxlength="4" required>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>メールアドレス <span class="required">必須</span></label>
+    <input type="email" name="email" required>
+  </div>
+
+  <div class="form-group">
+    <label>お問い合わせ内容 <span class="required">必須</span></label>
+    <textarea name="message" rows="5" required></textarea>
+  </div>
+
+  <!-- ハニーポット（表示しない）：スパムボット対策 -->
+  <div style="display:none;">
+    <label>Leave this field empty
+      <input type="text" name="website">
+    </label>
+  </div>
+
+  <!-- 連結済みの値をhiddenで送る（サーバ側で使いやすく） -->
+  <input type="hidden" name="name" id="fullName">
+  <input type="hidden" name="tel" id="fullTel">
+
+  <button type="submit">送信する</button>
+</form>
 </section>
 
 <!-- ========================== アクセス情報 ========================== -->
@@ -143,20 +151,29 @@
     <ul class="footer-nav">
       <li><a href="index.html">HOME</a></li>
       <li><a href="gyomu.html">業務内容</a></li>
-      <li><a href="sekou.HTML">施工事例</a></li>
-      <li><a href="gaiyou.HTML">会社概要</a></li>
-      <li><a href="recruit.HTML">求人情報</a></li>
-      <li><a href="contact.HTML">お問合せ</a></li>
+      <li><a href="sekou.html">施工事例</a></li>
+      <li><a href="gaiyou.html">会社概要</a></li>
+      <li><a href="recruit.html">求人情報</a></li>
+      <li><a href="contact.html">お問合せ</a></li>
       <li><a href="#">プライバシーポリシー</a></li>
     </ul>
     <p class="copyright">Copyright © Itto Co., Ltd. All Rights Reserved.</p>
   </footer>
 
-  <script>
-  document.getElementById('inquiryForm').addEventListener('submit', function(e) {
-    e.preventDefault(); // 実際の送信はナシ
-    this.style.display = 'none'; // フォームを非表示に
-    document.getElementById('thankYouMessage').style.display = 'block'; // メッセージ表示
+  
+<!-- ④ 代わりに、hidden埋めてからそのまま送信する軽いJSだけ入れる -->
+<script>
+  const f = document.getElementById('inquiryForm');
+  f.addEventListener('submit', () => {
+    const ln = f.querySelector('[name="lastName"]').value.trim();
+    const fn = f.querySelector('[name="firstName"]').value.trim();
+    document.getElementById('fullName').value = (ln + ' ' + fn).trim();
+
+    const t1 = f.querySelector('[name="tel1"]').value.trim();
+    const t2 = f.querySelector('[name="tel2"]').value.trim();
+    const t3 = f.querySelector('[name="tel3"]').value.trim();
+    document.getElementById('fullTel').value = [t1,t2,t3].filter(Boolean).join('-');
+    // e.preventDefault() はしない → 送信する
   });
 </script>
 

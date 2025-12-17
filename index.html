@@ -3,7 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-  <title>株式会社一陶</title>
+  <title>株式会社一陶|タイル工事の専門会社</title>
+
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <!-- 検索結果にサイト名を出すための構造化データ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "url": "https://itto-tile.main.jp/",
+    "name": "株式会社一陶",
+    "alternateName": "Itto Tile"
+  }
+  </script>
+
+    <!-- SNSシェア用（Googleも参考にする） -->
+  <meta property="og:site_name" content="株式会社一陶">
+  <meta property="og:title" content="株式会社一陶｜タイル工事の専門会社">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://itto-tile.main.jp/">
+</head>
+
 <link rel="stylesheet" href="base.css">
 <link rel="stylesheet" href="home.css">
 </head>
@@ -20,7 +42,7 @@
           <div class="tel">☎045-577-9444</div>
         </div>
       </div>
-      <a href="contact.HTML" class="contact-btn">お問合わせ</a>
+      <a href="contact.html" class="contact-btn">お問合わせ</a>
     </div>
 
     <!-- ナビメニュー（PC表示用） -->
@@ -28,9 +50,9 @@
       <ul class="nav-menu">
         <li><a href="index.html">HOME</a></li>
         <li><a href="gyomu.html">業務内容</a></li>
-        <li><a href="sekou.HTML">施工事例</a></li>
-        <li><a href="gaiyou.HTML">会社概要</a></li>
-        <li><a href="recruit.HTML">求人情報</a></li>
+        <li><a href="sekou.html">施工事例</a></li>
+        <li><a href="gaiyou.html">会社概要</a></li>
+        <li><a href="recruit.html">求人情報</a></li>
       </ul>
     </nav>
 
@@ -39,9 +61,9 @@
     <div class="nav-menu mobile" id="mobileMenu">
       <a href="index.html">HOME</a>
       <a href="gyomu.html">業務内容</a>
-      <a href="sekou.HTML">施工事例</a>
-      <a href="gaiyou.HTML">会社概要</a>
-      <a href="recruit.HTML">求人情報</a>
+      <a href="sekou.html">施工事例</a>
+      <a href="gaiyou.html">会社概要</a>
+      <a href="recruit.html">求人情報</a>
     </div>
   </header>
 
@@ -84,7 +106,7 @@
     <h2>一枚一枚のタイルに、想いを込めて。</h2>
     <h3>受け継がれた技と、信頼される仕上がりを。</h3>
     <p class="message-text">
-      培われた経験でマンションや商業施設、都市開発などの大規模なタイル工事から戸建住宅や店舗などの小規模なタイル工事までタイル工事全般を手掛けております。<br>
+      長年の経験を活かし、マンションや商業施設、都市開発などの大規模建築物を中心に、新築・改修を問わず、タイル工事全般を手掛けております。<br>
       <span class="mobile-hide">
         和と現代が調和する、美しく丈夫な空間づくりをお届けします。
       </span>
@@ -92,29 +114,27 @@
   </section>
 
   <!-- ========================== カードリンク集 ========================== -->
-  <section class="cards">
-    <!-- 各カードは別ページへのリンクになる想定 -->
-    <div class="card">
-      <img src="img/gyomu01.png" alt="業務内容">
-      <h4>業務内容</h4>
-      <a href="gyomu.html">詳しくはこちら</a>
-    </div>
-    <div class="card">
-      <img src="img/sekou-cards.jpg" alt="施工事例">
-      <h4>施工事例</h4>
-      <a href="sekou.HTML">詳しくはこちら</a>
-    </div>
-    <div class="card">
-      <img src="img/facade.png" alt="会社概要">
-      <h4>会社概要</h4>
-      <a href="gaiyou.HTML">詳しくはこちら</a>
-    </div>
-    <div class="card">
-      <img src="img/recruit.jpg" alt="求人情報">
-      <h4>求人情報</h4>
-      <a href="recruit.HTML">詳しくはこちら</a>
-    </div>
-  </section>
+<section class="cards">
+  <a href="gyomu.html" class="card">
+    <img src="img/gyomu01.png" alt="業務内容">
+    <h4>業務内容</h4>
+  </a>
+
+  <a href="sekou.html" class="card">
+    <img src="img/sekou-cards.jpg" alt="施工事例">
+    <h4>施工事例</h4>
+  </a>
+
+  <a href="gaiyou.html" class="card">
+    <img src="img/facade.png" alt="会社概要">
+    <h4>会社概要</h4>
+  </a>
+
+  <a href="recruit.html" class="card">
+    <img src="img/recruit.jpg" alt="求人情報">
+    <h4>求人情報</h4>
+  </a>
+</section>
 
   <!-- ========================== アクセス情報 ========================== -->
   <section class="access">
@@ -143,10 +163,10 @@
     <ul class="footer-nav">
       <li><a href="index.html">HOME</a></li>
       <li><a href="gyomu.html">業務内容</a></li>
-      <li><a href="sekou.HTML">施工事例</a></li>
-      <li><a href="gaiyou.HTML">会社概要</a></li>
-      <li><a href="recruit.HTML">求人情報</a></li>
-      <li><a href="contact.HTML">お問合せ</a></li>
+      <li><a href="sekou.html">施工事例</a></li>
+      <li><a href="gaiyou.html">会社概要</a></li>
+      <li><a href="recruit.html">求人情報</a></li>
+      <li><a href="contact.html">お問合せ</a></li>
       <li><a href="#">プライバシーポリシー</a></li>
     </ul>
     <p class="copyright">Copyright © Itto Co., Ltd. All Rights Reserved.</p>

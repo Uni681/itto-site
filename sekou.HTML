@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
- <meta charset="UTF-8" />
- <meta name="viewport" content="width=device-width, initial-scale=1.0" />
- <title>施工事例 | 株式会社一陶</title>
- <link rel="stylesheet" href="base.css" />
- <link rel="stylesheet" href="home.css" />
- <link rel="stylesheet" href="sekou.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>施工事例 | 株式会社一陶</title>
+  <link rel="stylesheet" href="base.css" />
+  <link rel="stylesheet" href="home.css" />
+  <link rel="stylesheet" href="sekou.css" />
 </head>
 <body>
 
@@ -21,7 +21,7 @@
           <div class="tel">☎045-577-9444</div>
         </div>
       </div>
-      <a href="contact.HTML" class="contact-btn">お問合わせ</a>
+      <a href="contact.html" class="contact-btn">お問合わせ</a>
     </div>
 
     <!-- ナビメニュー（PC表示用） -->
@@ -29,9 +29,9 @@
       <ul class="nav-menu">
         <li><a href="index.html">HOME</a></li>
         <li><a href="gyomu.html">業務内容</a></li>
-        <li><a href="sekou.HTML">施工事例</a></li>
-        <li><a href="gaiyou.HTML">会社概要</a></li>
-        <li><a href="recruit.HTML">求人情報</a></li>
+        <li><a href="sekou.html">施工事例</a></li>
+        <li><a href="gaiyou.html">会社概要</a></li>
+        <li><a href="recruit.html">求人情報</a></li>
       </ul>
     </nav>
 
@@ -40,82 +40,163 @@
     <div class="nav-menu mobile" id="mobileMenu">
       <a href="index.html">HOME</a>
       <a href="gyomu.html">業務内容</a>
-      <a href="sekou.HTML">施工事例</a>
-      <a href="gaiyou.HTML">会社概要</a>
-      <a href="recruit.HTML">求人情報</a>
+      <a href="sekou.html">施工事例</a>
+      <a href="gaiyou.html">会社概要</a>
+      <a href="recruit.html">求人情報</a>
     </div>
   </header>
 
-  <!-- ========================== JavaScript ========================== -->
-<script>
-  const hamburger = document.getElementById("hamburger");
-  const mobileMenu = document.getElementById("mobileMenu");
+  <!-- ========================== JavaScript（ハンバーガー） ========================== -->
+  <script>
+    const hamburger = document.getElementById("hamburger");
+    const mobileMenu = document.getElementById("mobileMenu");
 
-  if (hamburger && mobileMenu) {
-    hamburger.addEventListener("click", () => {
-      mobileMenu.style.display =
-        mobileMenu.style.display === "flex" ? "none" : "flex";
-    });
-
-    // モバイルメニューのリンク押したら自動で閉じるやつも追加
-    document.querySelectorAll('.nav-menu.mobile a').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.style.display = 'none';
+    if (hamburger && mobileMenu) {
+      hamburger.addEventListener("click", () => {
+        mobileMenu.style.display =
+          mobileMenu.style.display === "flex" ? "none" : "flex";
       });
-    });
-  }
-</script>
 
-<!-- ========================== ヒーローセクション（テキストのみ） ========================== -->
-<section class="hero-section">
-  <div class="hero-text">
-    <h1>施工事例</h1>
-    <p class="en-title">Works</p>
-    <div class="hero-line"></div>
-    <p class="hero-sub">私たちが手掛けた現場の一部をご紹介します。</p>
+      document.querySelectorAll('.nav-menu.mobile a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.style.display = 'none';
+        });
+      });
+    }
+  </script>
+
+  <!-- ========================== ヒーローセクション ========================== -->
+  <section class="hero-section">
+    <div class="hero-text">
+      <h1>施工事例</h1>
+      <p class="en-title">Works</p>
+      <div class="hero-line"></div>
+      <p class="hero-sub">
+        私たちが手掛けた現場の一部をご紹介します。<br>
+        マンション・店舗・オフィス・戸建てなど、用途に合わせたタイル施工を行っています。
+      </p>
+    </div>
+  </section>
+
+  <!-- ========================== 施工事例ギャラリー ========================== -->
+  <section class="works-page">
+    <div class="works-inner">
+
+      <div class="works-heading">
+        <h2>主な施工事例</h2>
+        <p class="works-sub">2023〜2025年にかけて手掛けた現場の一部です。</p>
+      </div>
+
+      <div class="works-grid">
+        <!-- ▼▼ この <article> をコピペして現場を増やす ▼▼ -->
+
+        <!-- 現場①：クリニック -->
+        <article
+          class="work-item"
+          data-title="墨田区内　住居用マンション　外装壁・床タイル施工"
+          data-type="RESIDENCE"
+          data-location="東京都墨田区"
+          data-date="2023年12月"
+          data-area="約548㎡"
+          data-note="住居用マンションの外装における壁面および床面のタイル施工を担当しました。"
+          data-images="img/works/sekou20230102.png,img/works/sekou20230103.png,img/works/sekou20230104.jpg,img/works/sekou20230105.jpg"
+        >
+          <div class="work-card">
+            <div class="work-thumb">
+              <img src="img/works/sekou20230101.png" alt="墨田区内　住居用マンション　共有部タイル施工">
+              <div class="work-tag">RESIDENCE / 墨田区・2023.12</div>
+            </div>
+            <div class="work-title">墨田区内　住居用マンション　外装壁・床タイル施工</div>
+            <div class="work-meta">外装壁面・床面のタイル施工</div>
+          </div>
+        </article>
+
+<!-- 現場②：準備中（クリック無効・画像なし） -->
+<article class="work-item coming-soon" aria-label="施工事例 準備中">
+  <div class="work-card">
+    <div class="work-thumb">
+      <div class="coming-soon-thumb">
+        <p class="coming-soon-en">Coming Soon</p>
+        <p class="coming-soon-jp">施工事例 準備中</p>
+      </div>
+      <div class="work-tag">RESIDENCE</div>
+    </div>
+    <div class="work-title">施工事例 準備中</div>
+    <div class="work-meta">現在、複数の施工実績を整理・掲載準備中です。</div>
   </div>
-</section>
+</article>
 
- <!-- ========================== 施工事例カード一覧 ========================== -->
-<section class="works-section">
- <h2 class="section-title">施工事例一覧</h2>
+ <!-- 現場③：マンション -->
+<article class="work-item coming-soon" aria-label="施工事例 準備中">
+  <div class="work-card">
+    <div class="work-thumb">
+      <div class="coming-soon-thumb">
+        <p class="coming-soon-en">Coming Soon</p>
+        <p class="coming-soon-jp">施工事例 準備中</p>
+      </div>
+      <div class="work-tag">RESIDENCE</div>
+    </div>
+    <div class="work-title">施工事例 準備中</div>
+    <div class="work-meta">現在、複数の施工実績を整理・掲載準備中です。</div>
+  </div>
+</article>
 
- <!-- === 現場① === -->
- <section class="site-section">
- <h2>準備中</h2>
- <div class="divider"></div>
- <div class="gallery">
- <img src="img/japanese-bg.jpg" alt="青葉1">
- <img src="img/japanese-bg.jpg" alt="青葉2">
- <img src="img/japanese-bg.jpg" alt="青葉3">
- </div>
- </section>
+        <!-- 現場④：戸建 -->
+<article class="work-item coming-soon" aria-label="施工事例 準備中">
+  <div class="work-card">
+    <div class="work-thumb">
+      <div class="coming-soon-thumb">
+        <p class="coming-soon-en">Coming Soon</p>
+        <p class="coming-soon-jp">施工事例 準備中</p>
+      </div>
+      <div class="work-tag">RESIDENCE</div>
+    </div>
+    <div class="work-title">施工事例 準備中</div>
+    <div class="work-meta">現在、複数の施工実績を整理・掲載準備中です。</div>
+  </div>
+</article>
 
- <!-- === 現場② === -->
- <section class="site-section">
- <h2>準備中</h2>
- <div class="divider"></div>
- <div class="gallery">
- <img src="img/japanese-bg.jpg" alt="港北1">
- <img src="img/japanese-bg.jpg" alt="港北2">
- <img src="img/japanese-bg.jpg" alt="港北3">
- <img src="img/japanese-bg.jpg" alt="港北4">
- </div>
- </section>
+        <!-- 現場⑤：商業施設 -->
+<article class="work-item coming-soon" aria-label="施工事例 準備中">
+  <div class="work-card">
+    <div class="work-thumb">
+      <div class="coming-soon-thumb">
+        <p class="coming-soon-en">Coming Soon</p>
+        <p class="coming-soon-jp">施工事例 準備中</p>
+      </div>
+      <div class="work-tag">RESIDENCE</div>
+    </div>
+    <div class="work-title">施工事例 準備中</div>
+    <div class="work-meta">現在、複数の施工実績を整理・掲載準備中です。</div>
+  </div>
+</article>
 
- <!-- === 現場③ === -->
- <section class="site-section">
- <h2>準備中</h2>
- <div class="divider"></div>
- <div class="gallery">
- <img src="img/japanese-bg.jpg" alt="川崎1">
- <img src="img/japanese-bg.jpg" alt="川崎2">
- </div>
- </section>
+<article class="work-item coming-soon" aria-label="施工事例 準備中">
+  <div class="work-card">
+    <div class="work-thumb">
+      <div class="coming-soon-thumb">
+        <p class="coming-soon-en">Coming Soon</p>
+        <p class="coming-soon-jp">施工事例 準備中</p>
+      </div>
+      <div class="work-tag">RESIDENCE</div>
+    </div>
+    <div class="work-title">施工事例 準備中</div>
+    <div class="work-meta">現在、複数の施工実績を整理・掲載準備中です。</div>
+  </div>
+</article>
 
- <!-- === 必要に応じて以下をコピペして増やしてね！ === -->
+        <!-- ▲▲ ここまでをコピペして現場を追加 ▲▲ -->
 
-</section>
+      </div>
+
+      <p class="works-note-bottom">
+        ※掲載以外にも、多数の新築・改修工事を手掛けております。<br>
+        仕様・規模に応じた施工実績をご覧になりたい方は、お気軽にお問い合わせください。
+      </p>
+
+    </div>
+  </section>
+
   <!-- ========================== アクセス情報 ========================== -->
   <section class="access">
     <div class="access-inner">
@@ -130,7 +211,7 @@
 
       <!-- Google Map -->
       <div class="access-map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3249.3757470499804!2d139.62208291124693!3d35.470246072542004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60185c112c4cb5b3%3A0x706524426e2fb7a8!2z44CSMjIxLTA4MzQg56We5aWI5bed55yM5qiq5rWc5biC56We5aWI5bed5Yy65Y-w55S677yY4oiS77yR77yUIOODmeOCpOOCt-ODhuOCo-a7neW3nQ!5e0!3m2!1sja!2sjp!4v1752821251835!5m2!1sja!2sjp" 
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3249.3757470499804!2d139.62208291124693!3d35.470246072542004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60185c112c4cb5b3%3A0x706524426e2fb7a8!2z44CSMjIxLTA4MzQg56We5aWI5bed55yM5qiq5rWc5biC56We5aWI5bed5Yy65Y-w55S677yY4oiS77yR77yUIOODmeOCpOOCt-ODhuOCo-a7neW3nQ!5e0!3m2!1sja!2sjp!4v1752821251835!5m2!1sja!2sjp"
           width="400" height="300" style="border:0;"
           allowfullscreen="" loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -143,13 +224,147 @@
     <ul class="footer-nav">
       <li><a href="index.html">HOME</a></li>
       <li><a href="gyomu.html">業務内容</a></li>
-      <li><a href="sekou.HTML">施工事例</a></li>
-      <li><a href="gaiyou.HTML">会社概要</a></li>
-      <li><a href="recruit.HTML">求人情報</a></li>
-      <li><a href="contact.HTML">お問合せ</a></li>
+      <li><a href="sekou.html">施工事例</a></li>
+      <li><a href="gaiyou.html">会社概要</a></li>
+      <li><a href="recruit.html">求人情報</a></li>
+      <li><a href="contact.html">お問合せ</a></li>
       <li><a href="#">プライバシーポリシー</a></li>
     </ul>
     <p class="copyright">Copyright © Itto Co., Ltd. All Rights Reserved.</p>
   </footer>
+
+  <!-- ========================== モーダル ========================== -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal" role="dialog" aria-modal="true">
+      <button class="modal-close" id="modalClose" aria-label="閉じる">×</button>
+
+      <div class="modal-left">
+        <button class="modal-nav prev" id="modalPrev" aria-label="前の写真">&#8249;</button>
+        <img src="" alt="" class="modal-image" id="modalImage">
+        <button class="modal-nav next" id="modalNext" aria-label="次の写真">&#8250;</button>
+      </div>
+
+      <div class="modal-right">
+        <h2 class="modal-title" id="modalTitle"></h2>
+        <div class="modal-type" id="modalType"></div>
+
+        <dl class="modal-info">
+          <dt>所在地</dt><dd id="modalLocation"></dd>
+          <dt>竣工</dt><dd id="modalDate"></dd>
+          <dt>規模</dt><dd id="modalArea"></dd>
+          <dt></dt><dd id="modalDesigner"></dd>
+        </dl>
+
+        <p class="modal-note" id="modalNote"></p>
+      </div>
+
+      <div class="modal-bottom">
+        掲載内容は一例です。仕様・工期・条件によりご提案内容は異なりますので、詳細はお問い合わせください。
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================== モーダル用スクリプト ========================== -->
+  <script>
+    const overlay = document.getElementById('modalOverlay');
+    const modalImage = document.getElementById('modalImage');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalType = document.getElementById('modalType');
+    const modalLocation = document.getElementById('modalLocation');
+    const modalDate = document.getElementById('modalDate');
+    const modalArea = document.getElementById('modalArea');
+    const modalDesigner = document.getElementById('modalDesigner');
+    const modalNote = document.getElementById('modalNote');
+
+    const btnClose = document.getElementById('modalClose');
+    const btnPrev = document.getElementById('modalPrev');
+    const btnNext = document.getElementById('modalNext');
+
+    let currentImages = [];
+    let currentIndex = 0;
+    let autoTimer = null;
+
+    function showImage(index) {
+      if (!currentImages.length) return;
+      currentIndex = (index + currentImages.length) % currentImages.length;
+      modalImage.src = currentImages[currentIndex];
+    }
+
+    function startAutoSlide() {
+      stopAutoSlide();
+      autoTimer = setInterval(() => {
+        showImage(currentIndex + 1);
+      }, 4000);
+    }
+
+    function stopAutoSlide() {
+      if (autoTimer) {
+        clearInterval(autoTimer);
+        autoTimer = null;
+      }
+    }
+
+    function openModalFromItem(item) {
+      const imgs = (item.dataset.images || '')
+        .split(',')
+        .map(s => s.trim())
+        .filter(Boolean);
+      if (!imgs.length) return;
+
+      currentImages = imgs;
+      currentIndex = 0;
+      showImage(0);
+      startAutoSlide();
+
+      modalTitle.textContent    = item.dataset.title    || '';
+      modalType.textContent     = item.dataset.type     || '';
+      modalLocation.textContent = item.dataset.location || '';
+      modalDate.textContent     = item.dataset.date     || '';
+      modalArea.textContent     = item.dataset.area     || '';
+      modalDesigner.textContent = item.dataset.designer || '';
+      modalNote.textContent     = item.dataset.note     || '';
+
+      overlay.classList.add('is-open');
+      document.body.classList.add('no-scroll');
+    }
+
+    function closeModal() {
+      overlay.classList.remove('is-open');
+      document.body.classList.remove('no-scroll');
+      stopAutoSlide();
+      currentImages = [];
+      modalImage.src = '';
+    }
+
+    document.querySelectorAll('.work-item').forEach(item => {
+      item.addEventListener('click', () => openModalFromItem(item));
+    });
+
+    btnClose.addEventListener('click', closeModal);
+
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) {
+        closeModal();
+      }
+    });
+
+    btnPrev.addEventListener('click', () => {
+      showImage(currentIndex - 1);
+      startAutoSlide();
+    });
+
+    btnNext.addEventListener('click', () => {
+      showImage(currentIndex + 1);
+      startAutoSlide();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (!overlay.classList.contains('is-open')) return;
+      if (e.key === 'Escape')      closeModal();
+      if (e.key === 'ArrowLeft')  { showImage(currentIndex - 1); startAutoSlide(); }
+      if (e.key === 'ArrowRight') { showImage(currentIndex + 1); startAutoSlide(); }
+    });
+  </script>
+
 </body>
 </html>

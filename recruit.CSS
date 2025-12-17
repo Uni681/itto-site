@@ -116,6 +116,38 @@ text-decoration: underline;
 text-decoration: none;
 }
 
+/* ==============================
+   ◆ 協力業者募集セクション
+============================== */
+.recruit-section {
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 40px 30px;
+  background-color: #f9f9f9; /* 優しい背景色。ヒーローとの繋がり意識 */
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+}
+
+.recruit-section h3 {
+  font-size: 24px;
+  color: #222;
+  border-left: 6px solid #000; /* 一陶らしい黒でアクセント */
+  padding-left: 12px;
+  margin-bottom: 20px;
+}
+
+.recruit-section p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #333;
+}
+
+.recruit-section strong {
+  color: #000;
+  font-weight: bold;
+}
+
 /* ========================== モバイル対応 ========================== */
 @media screen and (max-width: 768px) {
 .section-title {
